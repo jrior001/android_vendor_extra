@@ -4,11 +4,9 @@ PRODUCT_PACKAGES += auditd
 $(call prepend-product-if-exists, vendor/invisiblek/product.mk)
 
 ifneq ($(filter lineage_marlin lineage_mata lineage_nash lineage_sailfish,$(TARGET_PRODUCT)),)
-GAPPS_VARIANT := nano
-$(call inherit-product-if-exists, vendor/opengapps/build/opengapps-packages.mk)
-
-PRODUCT_COPY_FILES += \
-  vendor/opengapps/sources/arm/lib/23/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
+# TARGET_ARCH doesn't get set in time, so let's make sure its done before we inherit gapps
+TARGET_ARCH := arm64
+-include vendor/gapps/$(TARGET_ARCH)/$(TARGET_ARCH)-vendor.mk
 endif
 
 TARGET_EXTRA_KERNEL_MODULES := wireguard
