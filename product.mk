@@ -1,7 +1,7 @@
 PRODUCT_PACKAGE_OVERLAYS += vendor/extra/overlay
 PRODUCT_PACKAGES += auditd
 
-$(call prepend-product-if-exists, vendor/invisiblek/product.mk)
+$(call prepend-product-if-exists, vendor/jrior001/product.mk)
 
 ifneq ($(filter lineage_marlin lineage_mata lineage_nash lineage_sailfish,$(TARGET_PRODUCT)),)
 # TARGET_ARCH doesn't get set in time, so let's make sure its done before we inherit gapps

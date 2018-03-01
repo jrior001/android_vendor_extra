@@ -1,1 +1,1 @@
--include vendor/invisiblek/BoardConfigExtra.mk
+-include vendor/jrior001/BoardConfigExtra.mk
