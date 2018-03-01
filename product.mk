@@ -6,9 +6,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 $(call prepend-product-if-exists, vendor/jrior001/product.mk)
 
-ifneq ($(filter lineage_marlin lineage_mata lineage_nash lineage_sailfish,$(TARGET_PRODUCT)),)
+ifneq ($(filter lineage_marlin lineage_mata lineage_nash lineage_sailfish lineage_kipper lineage_crackling,$(TARGET_PRODUCT)),)
 # TARGET_ARCH doesn't get set in time, so let's make sure its done before we inherit gapps
 TARGET_ARCH := arm64
+-include vendor/gapps/$(TARGET_ARCH)/$(TARGET_ARCH)-vendor.mk
+endif
+
+ifneq ($(filter lineage_bacon lineage_n3 ,$(TARGET_PRODUCT)),)
+# TARGET_ARCH doesn't get set in time, so let's make sure its done before we inherit gapps
+TARGET_ARCH := arm
 -include vendor/gapps/$(TARGET_ARCH)/$(TARGET_ARCH)-vendor.mk
 endif
 
