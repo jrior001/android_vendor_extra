@@ -2,7 +2,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/extra/overlay
 PRODUCT_PACKAGES += auditd
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    lineage.updater.uri=http://updater.theflamingskull.com/api
+    lineage.updater.uri=http://updater.theflamingskull.com/api/v1/{device}/{type}/{incr}
 
 $(call prepend-product-if-exists, vendor/jrior001/product.mk)
 
