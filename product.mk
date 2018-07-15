@@ -2,7 +2,9 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/extra/overlay
 PRODUCT_PACKAGES += auditd
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    lineage.updater.uri=http://updater.theflamingskull.com/api/v1/{device}/{type}/{incr}
+    lineage.updater.uri=http://updater.theflamingskull.com/api/v1/{device}/{type}/{incr} \
+    ro.config.vc_call_vol_steps=15 \
+    ro.config.media_vol_steps=25
 
 $(call prepend-product-if-exists, vendor/jrior001/product.mk)
 
