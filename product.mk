@@ -2,10 +2,11 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/extra/overlay
 PRODUCT_PACKAGES += auditd
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    lineage.updater.uri=https://updater.theflamingskull.com/api/v1/{device}/{type}/{incr} \
     ro.config.vc_call_vol_steps=15 \
     ro.config.media_vol_steps=25
 
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    lineage.updater.uri=https://updater.theflamingskull.com/api/v1/{device}/{type}/{incr}
 $(call prepend-product-if-exists, vendor/jrior001/product.mk)
 
 ifneq ($(filter lineage_marlin lineage_mata lineage_nash lineage_sailfish,$(TARGET_PRODUCT)),)
