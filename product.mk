@@ -9,7 +9,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     lineage.updater.uri=https://updater.theflamingskull.com/api/v1/{device}/{type}/{incr}
 $(call prepend-product-if-exists, vendor/jrior001/product.mk)
 
-ifneq ($(filter lineage_marlin lineage_mata lineage_nash lineage_sailfish,$(TARGET_PRODUCT)),)
+ifneq ($(filter lineage_marlin lineage_mata lineage_nash lineage_sailfish lineage_polaris,$(TARGET_PRODUCT)),)
 # TARGET_ARCH doesn't get set in time, so let's make sure its done before we inherit gapps
 TARGET_ARCH := arm64
 -include vendor/gapps/$(TARGET_ARCH)/$(TARGET_ARCH)-vendor.mk
